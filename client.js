@@ -12,7 +12,13 @@ const connect = function () {
 
   conn.on("connect", () => {
     // code that does something when the connection is first established
-    console.log('you ded cuz you idled');
+    console.log('Successfully connected to game server');
+    conn.write(`Name: NP`);
+  });
+
+  conn.on("data", (msg) => {
+    // code that does something when the connection is first established
+    console.log('Server says:', msg);
   });
 
   return conn;
