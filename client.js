@@ -23,6 +23,10 @@ const connect = function () {
     console.log('Server says:', msg);
   });
 
+  conn.on("close", () => {
+    process.exit();
+  })
+
   return conn;
 };
 
